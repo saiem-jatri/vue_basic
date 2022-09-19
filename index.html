@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <input type="text" 
+        v-model="name"
+      >
+      <p>My Name is{{name}}</p>
+      <p v-on:click="outputVue()">{{outputVue()}}</p>
+      <button v-on:click="addButton(10)">Add</button>
+      <button v-on:click="removeButton(10)">Remove</button>
+      <button @click="clearInput">clear name</button>
+      <p>Result: {{ counter }}</p>
+      <div class="demo" :class="boxAClasses" v-on:click="boxActive('A')"></div>
+      <div class="demo" :class="boxBClasses"  v-on:click="boxActive('B')"></div>
+      <div class="demo" :class="boxCClasses" v-on:click="boxActive('C')"></div>
+    </section>
+  </body>
+</html>
